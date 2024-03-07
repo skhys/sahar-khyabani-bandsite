@@ -10,4 +10,14 @@ $secondary-black: #000000;
 $secondary-mercury: #e1e1e1;
 $secondary-alabaster: #fafafa;
 
-$font-family: "avenir", sans-serif;
+// $font-family: "avenir", sans-serif;
+$font-path: "/fonts/";
+
+@font-face {
+  font-family: "avenir";
+  src: url(/assets/Font/AvenirNextLTPro-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+$body-font: "avenir", sans-serif;
+$heading-font: "avenir", bold;
