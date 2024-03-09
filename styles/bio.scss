@@ -1,15 +1,54 @@
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
 
-* {
-    color: 
-    margin:
-}
+// * {
+// }
 
 body {
-    font-family: $body-font;
+  font-family: $body-font;
+  color: $primary-black;
+  border: 0;
+  margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $heading-font;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+// COME BACK TO THIS
+.site-header {
+  background-color: $primary-black;
+  color: $primary-white;
+  width: 100%;
+  // padding: 10px;
+}
+
+.logo {
+  color: $primary-white;
+  padding: 1rem;
+  display: inline-flex;
+}
+
+.primary-nav {
+  background-color: $primary-black;
 }
