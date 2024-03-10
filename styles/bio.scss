@@ -94,34 +94,90 @@ ol {
   display: flex;
   align-items: center;
   width: 100%;
+  @include tablet {
+    height: 60vh;
+  }
+
   &__title {
     color: $primary-white;
     font-size: 1.7rem;
     font-weight: bold;
     margin-left: 16px;
+    @include tablet {
+      font-size: 60px;
+      margin-left: 36px;
+      line-height: 68px;
+    }
   }
 }
 
 .site-main {
   padding: 24px 16px 16px 16px;
 
+  // @include tablet {
+  //   padding: 48px 36px 36px 36px;
+  // }
   &__title {
     font-size: 24px;
     margin: 0 0 16px 0;
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+      margin-left: 23px;
+    }
+  }
+  &__wrapper {
+    @include tablet {
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      display: grid;
+      place-items: center;
+    }
   }
   &__concertpic {
     padding: 0;
+    @include tablet {
+      height: 50vh;
+      max-width: 100%;
+    }
   }
   &__pullquote {
+    @include tablet {
+      width: 65%;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+  &__bandmate {
+    text-align: left;
+    width: 65%;
+  }
+  &__sectionwrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   &__columntitle {
-    font-weight: 400;
+    font-weight: 600;
+    @include tablet {
+      width: 65%;
+    }
+  }
+  &__columnwrapper {
+    @include tablet {
+      display: flex;
+      width: 65%;
+    }
   }
   &__column {
     font-size: 13px;
-  }
-  @include tablet {
-    padding-top: 24px;
+
+    @include tablet {
+      flex: 1;
+      margin: 0 10px;
+      padding-bottom: 16px;
+    }
   }
 }
 
@@ -130,13 +186,30 @@ ol {
   padding: 16px;
   display: flex;
   flex-wrap: wrap;
-
+  &__wrapper {
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      margin: 16px;
+    }
+  }
   &__title {
     font-size: 24px;
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+      margin-bottom: 0;
+      margin-left: 16px;
+    }
   }
   &__item {
-    justify-content: center;
-    padding-bottom: 16px;
+    padding: 1px;
+    margin: 1px;
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -144,31 +217,65 @@ ol {
   background-color: $primary-black;
   color: $primary-white;
   text-align: left;
-
+  &__headwrap {
+    @include tablet {
+      display: flex;
+    }
+  }
   &__header {
     padding: 24px 16px 16px 16px;
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+      padding: 36px;
+      margin: 0;
+    }
+  }
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      padding: 0px 16px 16px 16px;
+    }
   }
   &__social {
     display: flex;
     justify-content: space-evenly;
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
   }
   &__social-icon {
     display: inline-block;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      padding: 36px;
+    }
   }
   &__column {
     margin-left: 16px;
   }
   &__title {
     margin-left: 0;
+    @include tablet {
+      font-size: 14px;
+    }
   }
   &__list {
     padding-left: 0;
+    @include tablet {
+      font-size: 14px;
+    }
   }
   &__item {
     margin-bottom: 7px;
   }
   &__copyright {
     padding: 16px;
+    @include tablet {
+      padding-left: 36px;
+    }
   }
 }
 
