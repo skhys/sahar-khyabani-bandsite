@@ -60,9 +60,6 @@ ol {
 // .site-header__wrapper {
 //   display: flex;
 
-//   &
-// }
-
 .primary-nav {
   display: flex;
   width: 100%;
@@ -74,11 +71,13 @@ ol {
     margin: 0;
     padding: 0.5rem;
     width: 100%;
-
-    &__item {
-      display: flex;
-      font-size: 1rem;
-    }
+  }
+  &__item {
+    display: flex;
+    font-size: 1rem;
+  }
+  &__underline {
+    border-bottom: 2px solid $primary-white;
   }
 }
 
@@ -86,32 +85,103 @@ ol {
   background: url("../assets/Images/hero-bio.jpg");
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 10vh;
   min-height: 250px;
   max-height: 600px;
   display: flex;
   align-items: center;
   width: 100%;
-  @include tablet {
+
+  &-image-overlay {
+    width: 100%;
+    max-height: 600px;
+    min-height: 250px;
+    background-color: #32323224;
   }
+
   &__title {
+    display: flex;
+    align-items: center;
     color: $primary-white;
-    font-size: 3rem;
+    font-size: 1.7rem;
     font-weight: bold;
-    margin-left: 80px;
+    margin-left: 16px;
+    padding-top: 70px;
   }
 }
 
 .site-main {
-  padding: 48px;
+  padding: 24px 16px 16px 16px;
+
+  &__title {
+    font-size: 24px;
+    margin: 0 0 16px 0;
+
+    &__concertpic {
+      padding: 16px;
+
+      &__columntitle {
+        font-weight: 400;
+      }
+    }
+  }
   @include tablet {
     padding-top: 24px;
   }
 }
 
-// .site-main__title {
-//   padding-top: ;
-// }
+.photo-gallery__container {
+  background-color: $secondary-alabaster;
+  padding: 24px 16px 16px 16px;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__title {
+    font-size: 24px;
+  }
+  &__item {
+    justify-content: center;
+    padding-bottom: 16px;
+  }
+}
+
+.footer-container {
+  background-color: $primary-black;
+  color: $primary-white;
+  text-align: left;
+}
+
+.footer-container__header {
+  padding: 24px 16px 16px 16px;
+}
+
+.footer-container__social {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-container__social-icon {
+  display: inline-block;
+}
+
+.footer-container__column {
+  margin-left: 16px;
+}
+
+.footer-container__title {
+  margin-left: 0;
+}
+
+.footer-container__list {
+  padding-left: 0;
+}
+
+.footer-container__item {
+}
+
+.footer-container__copyright {
+  padding: 16px;
+}
 
 // DELETE THIS EVENTUALLY
 * {

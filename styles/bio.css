@@ -80,36 +80,107 @@ ol {
   padding: 0.5rem;
   width: 100%;
 }
-.primary-nav__list__item {
+.primary-nav__item {
   display: flex;
   font-size: 1rem;
+}
+.primary-nav__underline {
+  border-bottom: 2px solid #ffffff;
 }
 
 .banner {
   background: url("../assets/Images/hero-bio.jpg");
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 10vh;
   min-height: 250px;
   max-height: 600px;
   display: flex;
   align-items: center;
   width: 100%;
 }
+.banner-image-overlay {
+  width: 100%;
+  max-height: 600px;
+  min-height: 250px;
+  background-color: rgba(50, 50, 50, 0.1411764706);
+}
 .banner__title {
+  display: flex;
+  align-items: center;
   color: #ffffff;
-  font-size: 3rem;
+  font-size: 1.7rem;
   font-weight: bold;
-  margin-left: 80px;
+  margin-left: 16px;
+  padding-top: 70px;
 }
 
 .site-main {
-  padding: 48px;
+  padding: 24px 16px 16px 16px;
+}
+.site-main__title {
+  font-size: 24px;
+  margin: 0 0 16px 0;
+}
+.site-main__title__concertpic {
+  padding: 16px;
+}
+.site-main__title__concertpic__columntitle {
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .site-main {
     padding-top: 24px;
   }
+}
+
+.photo-gallery__container {
+  background-color: #fafafa;
+  padding: 24px 16px 16px 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.photo-gallery__container__title {
+  font-size: 24px;
+}
+.photo-gallery__container__item {
+  justify-content: center;
+  padding-bottom: 16px;
+}
+
+.footer-container {
+  background-color: #323232;
+  color: #ffffff;
+  text-align: left;
+}
+
+.footer-container__header {
+  padding: 24px 16px 16px 16px;
+}
+
+.footer-container__social {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-container__social-icon {
+  display: inline-block;
+}
+
+.footer-container__column {
+  margin-left: 16px;
+}
+
+.footer-container__title {
+  margin-left: 0;
+}
+
+.footer-container__list {
+  padding-left: 0;
+}
+
+.footer-container__copyright {
+  padding: 16px;
 }
 
 * {
