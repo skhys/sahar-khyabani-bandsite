@@ -54,6 +54,10 @@ ol {
     color: $primary-white;
     padding: 1rem;
     font-size: 36px;
+    @include desktop {
+      padding: 48px 36px 36px 36px;
+      margin-left: 4rem;
+    }
   }
 }
 
@@ -97,6 +101,9 @@ ol {
   @include tablet {
     height: 60vh;
   }
+  @include desktop {
+    height: 100vh;
+  }
 
   &__title {
     color: $primary-white;
@@ -106,6 +113,11 @@ ol {
     @include tablet {
       font-size: 60px;
       margin-left: 36px;
+      line-height: 68px;
+    }
+    @include desktop {
+      font-size: 60px;
+      margin-left: 6.2rem;
       line-height: 68px;
     }
   }
@@ -125,6 +137,10 @@ ol {
       line-height: 44px;
       margin-left: 23px;
     }
+    @include desktop {
+      margin-left: 3rem;
+      padding: 36px;
+    }
   }
   &__wrapper {
     @include tablet {
@@ -141,6 +157,12 @@ ol {
       height: 50vh;
       max-width: 100%;
     }
+    @include desktop {
+      height: 70vh;
+      max-width: 100%;
+      display: block;
+      position: relative;
+    }
   }
   &__pullquote {
     @include tablet {
@@ -148,10 +170,17 @@ ol {
       text-align: left;
       margin-bottom: 0;
     }
+    @include desktop {
+      width: 62%;
+      font-size: 24px;
+    }
   }
   &__bandmate {
     text-align: left;
     width: 65%;
+    @include desktop {
+      width: 62%;
+    }
   }
   &__sectionwrap {
     display: flex;
@@ -163,11 +192,21 @@ ol {
     @include tablet {
       width: 65%;
     }
+    @include desktop {
+      font-size: 24px;
+      font-weight: 700;
+      margin-left: 30px;
+    }
   }
   &__columnwrapper {
     @include tablet {
       display: flex;
       width: 65%;
+    }
+    @include desktop {
+      display: flex;
+      width: 65%;
+      padding-bottom: 20px;
     }
   }
   &__column {
@@ -177,6 +216,10 @@ ol {
       flex: 1;
       margin: 0 10px;
       padding-bottom: 16px;
+    }
+    @include desktop {
+      font-size: 16px;
+      margin: 0 16px 0 16px;
     }
   }
 }
@@ -195,6 +238,9 @@ ol {
       align-items: center;
       margin: 16px;
     }
+    @include desktop {
+      margin: 48px;
+    }
   }
   &__title {
     font-size: 24px;
@@ -203,6 +249,9 @@ ol {
       line-height: 44px;
       margin-bottom: 0;
       margin-left: 16px;
+    }
+    @include desktop {
+      margin-left: 3rem;
     }
   }
   &__item {
@@ -221,6 +270,8 @@ ol {
     @include tablet {
       display: flex;
     }
+    // @include desktop {
+    // }
   }
   &__header {
     padding: 24px 16px 16px 16px;
@@ -230,11 +281,19 @@ ol {
       padding: 36px;
       margin: 0;
     }
+    @include desktop {
+      margin: 36px;
+      padding: 36px 36px 0 36px;
+    }
   }
   &__wrapper {
     @include tablet {
       display: flex;
       padding: 0px 16px 16px 16px;
+    }
+    @include desktop {
+      display: flex;
+      padding: 0px 36px 36px 36px;
     }
   }
   &__social {
@@ -252,20 +311,33 @@ ol {
       justify-content: space-between;
       padding: 36px;
     }
+    @include desktop {
+      display: flex;
+      height: 25px;
+    }
   }
   &__column {
     margin-left: 16px;
+    @include desktop {
+      padding-left: 16px;
+    }
   }
   &__title {
     margin-left: 0;
     @include tablet {
       font-size: 14px;
     }
+    @include desktop {
+      font-size: 20px;
+    }
   }
   &__list {
     padding-left: 0;
     @include tablet {
       font-size: 14px;
+    }
+    @include desktop {
+      font-size: 18px;
     }
   }
   &__item {
@@ -276,10 +348,14 @@ ol {
     @include tablet {
       padding-left: 36px;
     }
+    @include desktop {
+      padding: 0 48px 36px 36px;
+      margin-left: 30px;
+    }
   }
 }
 
 // DELETE THIS EVENTUALLY
-* {
-  outline: 1px solid red;
-}
+// * {
+//   outline: 1px solid red;
+// }

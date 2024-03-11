@@ -67,6 +67,12 @@ ol {
   padding: 1rem;
   font-size: 36px;
 }
+@media (min-width: 1280px) {
+  .site-header__logo {
+    padding: 48px 36px 36px 36px;
+    margin-left: 4rem;
+  }
+}
 
 .primary-nav {
   display: flex;
@@ -103,6 +109,11 @@ ol {
     height: 60vh;
   }
 }
+@media (min-width: 1280px) {
+  .banner {
+    height: 100vh;
+  }
+}
 .banner__title {
   color: #ffffff;
   font-size: 1.7rem;
@@ -113,6 +124,13 @@ ol {
   .banner__title {
     font-size: 60px;
     margin-left: 36px;
+    line-height: 68px;
+  }
+}
+@media (min-width: 1280px) {
+  .banner__title {
+    font-size: 60px;
+    margin-left: 6.2rem;
     line-height: 68px;
   }
 }
@@ -131,6 +149,12 @@ ol {
     margin-left: 23px;
   }
 }
+@media (min-width: 1280px) {
+  .site-main__title {
+    margin-left: 3rem;
+    padding: 36px;
+  }
+}
 @media (min-width: 768px) {
   .site-main__wrapper {
     display: grid;
@@ -146,6 +170,14 @@ ol {
     max-width: 100%;
   }
 }
+@media (min-width: 1280px) {
+  .site-main__concertpic {
+    height: 70vh;
+    max-width: 100%;
+    display: block;
+    position: relative;
+  }
+}
 @media (min-width: 768px) {
   .site-main__pullquote {
     width: 65%;
@@ -153,9 +185,20 @@ ol {
     margin-bottom: 0;
   }
 }
+@media (min-width: 1280px) {
+  .site-main__pullquote {
+    width: 62%;
+    font-size: 24px;
+  }
+}
 .site-main__bandmate {
   text-align: left;
   width: 65%;
+}
+@media (min-width: 1280px) {
+  .site-main__bandmate {
+    width: 62%;
+  }
 }
 .site-main__sectionwrap {
   display: flex;
@@ -170,10 +213,24 @@ ol {
     width: 65%;
   }
 }
+@media (min-width: 1280px) {
+  .site-main__columntitle {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 30px;
+  }
+}
 @media (min-width: 768px) {
   .site-main__columnwrapper {
     display: flex;
     width: 65%;
+  }
+}
+@media (min-width: 1280px) {
+  .site-main__columnwrapper {
+    display: flex;
+    width: 65%;
+    padding-bottom: 20px;
   }
 }
 .site-main__column {
@@ -184,6 +241,12 @@ ol {
     flex: 1;
     margin: 0 10px;
     padding-bottom: 16px;
+  }
+}
+@media (min-width: 1280px) {
+  .site-main__column {
+    font-size: 16px;
+    margin: 0 16px 0 16px;
   }
 }
 
@@ -203,6 +266,11 @@ ol {
     margin: 16px;
   }
 }
+@media (min-width: 1280px) {
+  .photo-gallery__wrapper {
+    margin: 48px;
+  }
+}
 .photo-gallery__title {
   font-size: 24px;
 }
@@ -212,6 +280,11 @@ ol {
     line-height: 44px;
     margin-bottom: 0;
     margin-left: 16px;
+  }
+}
+@media (min-width: 1280px) {
+  .photo-gallery__title {
+    margin-left: 3rem;
   }
 }
 .photo-gallery__item {
@@ -242,10 +315,22 @@ ol {
     margin: 0;
   }
 }
+@media (min-width: 1280px) {
+  .footer-container__header {
+    margin: 36px;
+    padding: 36px 36px 0 36px;
+  }
+}
 @media (min-width: 768px) {
   .footer-container__wrapper {
     display: flex;
     padding: 0px 16px 16px 16px;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-container__wrapper {
+    display: flex;
+    padding: 0px 36px 36px 36px;
   }
 }
 .footer-container__social {
@@ -268,8 +353,19 @@ ol {
     padding: 36px;
   }
 }
+@media (min-width: 1280px) {
+  .footer-container__social-icon {
+    display: flex;
+    height: 25px;
+  }
+}
 .footer-container__column {
   margin-left: 16px;
+}
+@media (min-width: 1280px) {
+  .footer-container__column {
+    padding-left: 16px;
+  }
 }
 .footer-container__title {
   margin-left: 0;
@@ -279,12 +375,22 @@ ol {
     font-size: 14px;
   }
 }
+@media (min-width: 1280px) {
+  .footer-container__title {
+    font-size: 20px;
+  }
+}
 .footer-container__list {
   padding-left: 0;
 }
 @media (min-width: 768px) {
   .footer-container__list {
     font-size: 14px;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-container__list {
+    font-size: 18px;
   }
 }
 .footer-container__item {
@@ -298,7 +404,9 @@ ol {
     padding-left: 36px;
   }
 }
-
-* {
-  outline: 1px solid red;
+@media (min-width: 1280px) {
+  .footer-container__copyright {
+    padding: 0 48px 36px 36px;
+    margin-left: 30px;
+  }
 }/*# sourceMappingURL=bio.css.map */
