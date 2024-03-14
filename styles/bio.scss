@@ -126,9 +126,6 @@ ol {
 .site-main {
   padding: 24px 16px 16px 16px;
 
-  // @include tablet {
-  //   padding: 48px 36px 36px 36px;
-  // }
   &__title {
     font-size: 24px;
     margin: 0 0 16px 0;
@@ -144,9 +141,6 @@ ol {
   }
   &__wrapper {
     @include tablet {
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
       display: grid;
       place-items: center;
     }
@@ -270,8 +264,6 @@ ol {
     @include tablet {
       display: flex;
     }
-    // @include desktop {
-    // }
   }
   &__header {
     padding: 24px 16px 16px 16px;
@@ -353,6 +345,41 @@ ol {
       margin-left: 30px;
     }
   }
+}
+
+.comment-form {
+  &__title {
+    padding-left: 28px;
+  }
+
+  &__list {
+    color: $secondary-mercury;
+  }
+
+  &__wrapper {
+    margin: 10px;
+  }
+}
+
+input[type="text"],
+input[type="comment"] {
+  padding: 10px;
+  border-color: #32323224;
+  border-radius: 5px;
+  width: 300px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+.button-item {
+  font-size: 13px;
+  padding: 16px;
+}
+
+input [type="submit"] {
 }
 
 // DELETE THIS EVENTUALLY
