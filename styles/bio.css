@@ -414,19 +414,34 @@ ol {
 .comment-form__title {
   padding-left: 28px;
 }
-.comment-form__list {
-  color: #e1e1e1;
-}
 .comment-form__wrapper {
   margin: 10px;
+  color: #afafaf;
+  font-weight: 600;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+.comment-form__img {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
 }
 
-input[type=text],
+input[type=text] {
+  padding: 10px;
+  border-color: rgba(50, 50, 50, 0.1411764706);
+  border-radius: 5px;
+  width: 240px;
+  background-color: #fafafa;
+}
+
 input[type=comment] {
   padding: 10px;
   border-color: rgba(50, 50, 50, 0.1411764706);
   border-radius: 5px;
-  width: 300px;
+  width: 240px;
+  background-color: #fafafa;
+  color: #000000;
 }
 
 label {
@@ -434,7 +449,13 @@ label {
   width: 100px;
 }
 
-.button-item {
+button[type=submit] {
   font-size: 13px;
   padding: 16px;
+  color: #ffffff;
+  background-color: #323232;
+  border-radius: 5px;
+  margin-left: 28px;
+  width: 85%;
+  margin-bottom: 16px;
 }/*# sourceMappingURL=bio.css.map */

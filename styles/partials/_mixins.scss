@@ -12,12 +12,6 @@
   }
 }
 
-@mixin mobile {
-  @media (min-width: $mobile-width) {
-    @content;
-  }
-}
-
 @mixin flexbox {
   display: flex;
   justify-content: center;

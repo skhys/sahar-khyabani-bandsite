@@ -73,31 +73,31 @@
       <h1 class="photo-gallery__title">Photo Gallery</h1>
       <div class="photo-gallery__wrapper">
         <div class="photo-gallery__item">
-          <img src="./assets/Images/Photo-gallery-1.jpg" alt="Image 1" />
+          <img src="./assets/Images/Photo-gallery-1.jpg" alt="Concert goers" />
         </div>
         <div class="photo-gallery__item">
-          <img src="./assets/Images/Photo-gallery-2.jpg" alt="Image 2" />
+          <img src="./assets/Images/Photo-gallery-2.jpg" alt="Concert fan" />
         </div>
         <div class="photo-gallery__item">
-          <img src="./assets/Images/Photo-gallery-3.jpg" alt="Image 3" />
+          <img src="./assets/Images/Photo-gallery-3.jpg" alt="Hands at concert" />
         </div>
         <div class="photo-gallery__item">
-          <img src="./assets/Images/Photo-gallery-4.jpg" alt="Image 4" />
+          <img src="./assets/Images/Photo-gallery-4.jpg" alt="Woman at concert" />
         </div>
         <div class="photo-gallery__item">
-          <img src="./assets/Images/Photo-gallery-5.jpg" alt="Image 5" />
+          <img src="./assets/Images/Photo-gallery-5.jpg" alt="Concert confetti" />
         </div>
         <div class="photo-gallery__item">
-          <img src="./assets/Images/Photo-gallery-6.jpg" alt="Image 6" />
+          <img src="./assets/Images/Photo-gallery-6.jpg" alt="Lead singer" />
         </div>
         <div class="photo-gallery__item">
-          <img src="./assets/Images/Photo-gallery-7.jpg" alt="Image 7" />
+          <img src="./assets/Images/Photo-gallery-7.jpg" alt="Concert rainbow confetti" />
         </div>
         <div class="photo-gallery__item">
-          <img src="./assets/Images/Photo-gallery-8.jpg" alt="Image 8" />
+          <img src="./assets/Images/Photo-gallery-8.jpg" alt="DJ booth" />
         </div>
         <div class="photo-gallery__item">
-          <img src="./assets/Images/Photo-gallery-9.jpg" alt="Image 9" />
+          <img src="./assets/Images/Photo-gallery-9.jpg" alt="Confetti in the crowd" />
         </div>
       </div>
     </section>
@@ -105,7 +105,10 @@
     <section class="comment-form">
       <h2 class="comment-form__title">Join the Conversation</h2>
       <div class="comment-form__wrapper">
-      <form class="comment-form__item">
+      <form id="commentForm">
+        <div>
+          <img class="comment-form__img" src="./assets/Images/Mohan-muruge.jpg" alt="profilepic" />
+        </div>
         <label for="comment-form__list">NAME:</label>
         <input
           type="text"
@@ -130,7 +133,7 @@
       <button type="submit">COMMENT</button>
     </div>
     </form>
-
+    <ul id="dynamicContent"></ul>
     <footer class="footer-container">
       <div class="footer-container__headwrap">
         <h2 class="footer-container__header">Get in Touch</h2>
