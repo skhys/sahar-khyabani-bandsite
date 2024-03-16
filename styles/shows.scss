@@ -10,5 +10,264 @@
 // }
 
 body {
-  background: red;
+  font-family: $body-font;
+  color: $primary-black;
+  border: 0;
+  margin: 0;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: $primary-black;
+  color: $primary-white;
+  width: 100%;
+  // padding: 10px;
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__logo {
+    color: $primary-white;
+    padding: 1rem;
+    font-size: 36px;
+    @include tablet {
+      margin-left: 23px;
+    }
+    @include desktop {
+      padding: 48px 36px 36px 36px;
+      margin-left: 5rem;
+    }
+  }
+}
+
+.primary-nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0.5rem;
+    width: 100%;
+  }
+  &__item {
+    display: flex;
+    font-size: 1rem;
+  }
+  &__underline {
+    border-bottom: 2px solid $primary-white;
+  }
+  @include tablet {
+  }
+}
+
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../assets/Images/hero-shows.jpg");
+  background-size: cover;
+  background-position: center;
+  // height: 10vh;
+  min-height: 350px;
+  // max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  color: $primary-white;
+  @include tablet {
+    // height: 60vh;
+    min-height: 50%;
+    padding-top: 30px;
+  }
+  @include desktop {
+    height: 100vh;
+    display: flex;
+    // min-height: 40%;
+  }
+  &__wrapper {
+    @include desktop {
+      display: flex;
+      align-items: center;
+      height: 35%;
+    }
+  }
+  &__bigtitle {
+    color: $primary-white;
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 16px 20px;
+    margin: 0;
+    @include tablet {
+      font-size: 67.5px;
+      margin-left: 20px;
+      line-height: 68px;
+    }
+    @include desktop {
+      font-size: 80px;
+      margin-left: 7rem;
+      line-height: 68px;
+      padding: 0;
+    }
+  }
+  &__smalltitle {
+    padding: 30px 0 0 20px;
+    font-weight: 400;
+    margin: 0;
+    @include tablet {
+      margin-left: 25px;
+      font-weight: 600;
+    }
+    @include desktop {
+      font-size: 23px;
+      margin-left: 6.2rem;
+      line-height: 68px;
+      padding-top: 90px;
+    }
+  }
+  &__soundcloud {
+    margin-left: 20px;
+    @include tablet {
+      width: 70%;
+      margin-left: 40px;
+      padding-top: 20px;
+    }
+    @include desktop {
+      width: 40%;
+    }
+  }
+}
+
+.site-main {
+  &__title {
+    padding: 16px 0 0 20px;
+  }
+  &__list {
+    display: flex;
+  }
+}
+
+.footer-container {
+  background-color: $primary-black;
+  color: $primary-white;
+  text-align: left;
+  &__headwrap {
+    @include tablet {
+      display: flex;
+    }
+  }
+  &__header {
+    padding: 24px 16px 16px 16px;
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+      padding: 36px;
+      margin: 0;
+    }
+    @include desktop {
+      margin: 36px;
+      padding: 36px 36px 0 36px;
+    }
+  }
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      padding: 0px 16px 16px 16px;
+    }
+    @include desktop {
+      display: flex;
+      padding: 0px 36px 36px 36px;
+    }
+  }
+  &__social {
+    display: flex;
+    justify-content: space-evenly;
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__social-icon {
+    display: inline-block;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      padding: 36px;
+    }
+    @include desktop {
+      display: flex;
+      height: 25px;
+    }
+  }
+  &__column {
+    margin-left: 16px;
+    @include desktop {
+      padding-left: 16px;
+    }
+  }
+  &__title {
+    margin-left: 0;
+    @include tablet {
+      font-size: 14px;
+    }
+    @include desktop {
+      font-size: 20px;
+    }
+  }
+  &__list {
+    padding-left: 0;
+    @include tablet {
+      font-size: 14px;
+    }
+    @include desktop {
+      font-size: 18px;
+    }
+  }
+  &__item {
+    margin-bottom: 7px;
+  }
+  &__copyright {
+    padding: 16px;
+    @include tablet {
+      padding-left: 36px;
+    }
+    @include desktop {
+      padding: 0 48px 36px 36px;
+      margin-left: 30px;
+    }
+  }
+}
+
+// // DELETE THIS EVENTUALLY
+// * {
+//   outline: 1px solid red;
+// }
