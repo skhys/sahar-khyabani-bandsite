@@ -185,11 +185,15 @@ ol {
   }
 }
 
-.site-main__title {
+.show__title {
   padding: 16px 0 0 20px;
 }
-.site-main__list {
+.show__list {
   display: flex;
+}
+.show__subtitle {
+  display: flex;
+  justify-content: space-around;
 }
 
 .footer-container {

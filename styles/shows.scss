@@ -167,12 +167,16 @@ ol {
   }
 }
 
-.site-main {
+.show {
   &__title {
     padding: 16px 0 0 20px;
   }
   &__list {
     display: flex;
+  }
+  &__subtitle {
+    display: flex;
+    justify-content: space-around;
   }
 }
 

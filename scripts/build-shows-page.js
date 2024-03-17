@@ -31,5 +31,39 @@ const shows = [
   },
 ];
 
-const BLANK = document.querySelector(".site-main");
-console.log();
+const showContainer = document.querySelector(".show");
+console.log(showsContainer);
+
+function displayShow(show) {
+  const showElement = document.createElement("div");
+  showElement.classList.add("show__list");
+
+  const dateElement = document.createElement("p");
+  dateElement.classList.add("show__date");
+  dateElement.textContent = show.date;
+  show.appendChild(dateElement);
+
+  const venueElement = document.createElement("h5");
+  venueElement.classList.add("show__venue");
+  venueElement.textContent = show.venue;
+  venueElement.appendChild(venueElement);
+
+  const locationElement = document.createElement("h5");
+  locationElement.classList.add("show__location");
+  locationElement.textContent = show.location;
+  locationElement.appendChild(locationElement);
+
+  showContainer.appendChild(showElement);
+}
+
+function displayShows() {
+  showContainer.innerHTML = "";
+
+  shows.forEach((show) => {
+    displayShow(show);
+  });
+}
+
+// displayShows();
+// shows.push({
+// })
