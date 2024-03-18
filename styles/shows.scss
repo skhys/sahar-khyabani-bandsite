@@ -174,20 +174,21 @@ p {
 .show {
   display: flex;
   flex-direction: column;
-  // @include tablet {
-  //   // display: flex;
-  //   // flex-direction: row;
-  // }
-
-  // border-bottom the entire container for the line break.
-  // border-bottom: 1px solid $secondary-mercury;
+  border-bottom: 1px solid $secondary-mercury;
+  @include tablet {
+    display: flex;
+    // flex-direction: row;
+  }
 
   &__title {
     padding: 16px 0 0 20px;
   }
   &__list {
-    border-bottom: 1px solid $secondary-mercury;
-    // display: flex;
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
   }
 
   // &__subtitle {
@@ -241,6 +242,8 @@ button[type="submit"] {
   width: 90%;
   margin-bottom: 16px;
   // border-bottom: 5px;
+  @include tablet {
+  }
 }
 
 .footer-container {

@@ -192,12 +192,22 @@ p {
 .show {
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid #e1e1e1;
+}
+@media (min-width: 768px) {
+  .show {
+    display: flex;
+  }
 }
 .show__title {
   padding: 16px 0 0 20px;
 }
-.show__list {
-  border-bottom: 1px solid #e1e1e1;
+@media (min-width: 768px) {
+  .show__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 }
 .show__dateheader {
   font-size: 12px;
@@ -236,7 +246,6 @@ button[type=submit] {
   width: 90%;
   margin-bottom: 16px;
 }
-
 .footer-container {
   background-color: #323232;
   color: #ffffff;

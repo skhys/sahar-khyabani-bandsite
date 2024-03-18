@@ -421,10 +421,25 @@ ol {
   font-size: 12px;
   padding-bottom: 10px;
 }
+@media (min-width: 768px) {
+  .comment-form__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 1280px) {
+  .comment-form__wrapper {
+    font-size: 16px;
+  }
+}
 .comment-form__img {
   border-radius: 50%;
   width: 36px;
   height: 36px;
+}
+
+.comment__group {
+  border-bottom: 1px solid #e1e1e1;
 }
 
 input[type=text] {
@@ -433,6 +448,12 @@ input[type=text] {
   border-radius: 5px;
   width: 240px;
   background-color: #fafafa;
+}
+@media (min-width: 768px) {
+  input[type=text] {
+    width: 400px;
+    height: 50px;
+  }
 }
 
 input[type=comment] {
@@ -459,10 +480,13 @@ button[type=submit] {
   width: 85%;
   margin-bottom: 16px;
 }
+
 @media (min-width: 768px) {
-  button[type=submit] {
-    width: 40%;
+  .button-item {
+    width: 100%;
     font-size: 16px;
+    display: flex;
+    justify-content: center;
   }
 }
 

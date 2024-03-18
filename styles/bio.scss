@@ -364,11 +364,24 @@ ol {
     font-size: 12px;
     padding-bottom: 10px;
     // display: flex;
+    @include tablet {
+      display: flex;
+      justify-content: center;
+    }
+    @include desktop {
+      font-size: 16px;
+    }
   }
   &__img {
     border-radius: 50%;
     width: 36px;
     height: 36px;
+  }
+}
+
+.comment {
+  &__group {
+    border-bottom: 1px solid $secondary-mercury;
   }
 }
 
@@ -378,6 +391,10 @@ input[type="text"] {
   border-radius: 5px;
   width: 240px;
   background-color: $secondary-alabaster;
+  @include tablet {
+    width: 400px;
+    height: 50px;
+  }
 }
 
 input[type="comment"] {
@@ -385,7 +402,7 @@ input[type="comment"] {
   border-color: #32323224;
   border-radius: 5px;
   width: 240px;
-  // height: 48px;
+  // height: 500px;
   background-color: $secondary-alabaster;
   color: $secondary-black;
 }
@@ -404,9 +421,15 @@ button[type="submit"] {
   margin-left: 28px;
   width: 85%;
   margin-bottom: 16px;
+}
+
+.button-item {
   @include tablet {
-    width: 40%;
+    width: 100%;
+
     font-size: 16px;
+    display: flex;
+    justify-content: center;
   }
 }
 

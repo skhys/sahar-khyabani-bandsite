@@ -23,6 +23,9 @@ const commentsContainer = document.querySelector(".comment");
 console.log(commentsContainer);
 
 function displayComment(comment) {
+  const groupElement = document.createElement("div");
+  groupElement.classList.add("comment__group");
+
   const nameElement = document.createElement("p");
   nameElement.classList.add("comment__name");
   nameElement.textContent = comment.name;
@@ -37,6 +40,8 @@ function displayComment(comment) {
   textElement.classList.add("comment__text");
   textElement.textContent = comment.text;
   commentsContainer.appendChild(textElement);
+
+  commentsContainer.appendChild(groupElement);
 }
 
 function displayComments() {
@@ -68,16 +73,28 @@ displayComments();
 // const commentName
 // }
 
-// comment box code
+// test comment box code
+// const commentForm = document.getElementById("commentForm");
+// const dynamicContent = document.getElementById("dynamicContent");
+
+// commentForm.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   const userName = event.target.nameInput.value;
+//   const newComment = event.target.commentInput.value;
+//   const listElement = document.createElement("li");
+//   listElement.innerText = userName;
+//   listElement.innerText = newComment;
+//   dynamicContent.appendChild(listElement);
+// });
+
 const commentForm = document.getElementById("commentForm");
 const dynamicContent = document.getElementById("dynamicContent");
 
 commentForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  const userName = event.target.nameInput.value;
-  const newComment = event.target.commentInput.value;
-  const listElement = document.createElement("li");
-  listElement.innerText = userName;
-  listElement.innerText = newComment;
-  dynamicContent.appendChild(listElement);
+  const userName = document.getElementById("nameInput").value;
+  const newComment = document.getElementById("commentInput").value;
+  const listItem = document.createElement("li");
+  listItem.innerText = userName + ": " + newComment;
+  dynamicContent.appendChild(listItem);
 });

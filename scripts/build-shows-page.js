@@ -58,8 +58,8 @@ const showsContainer = document.querySelector(".show__list");
 console.log(showsContainer);
 
 function displayShow(show) {
-  //   const containerElement = document.createElement("div");
-  //   showsContainer.classList.add("show__wrapper");
+  const showElement = document.createElement("main");
+  showElement.classList.add("show");
 
   const dateElement = document.createElement("p");
   dateElement.classList.add("show__dateheader");
@@ -95,6 +95,8 @@ function displayShow(show) {
   buttonElement.setAttribute("type", "submit");
   buttonElement.textContent = show.button;
   showsContainer.appendChild(buttonElement);
+
+  showsContainer.appendChild(showElement);
 }
 
 function displayShows() {
