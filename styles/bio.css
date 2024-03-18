@@ -458,4 +458,27 @@ button[type=submit] {
   margin-left: 28px;
   width: 85%;
   margin-bottom: 16px;
+}
+@media (min-width: 768px) {
+  button[type=submit] {
+    width: 40%;
+    font-size: 16px;
+  }
+}
+
+.comment {
+  border-bottom: 1px solid #e1e1e1;
+  position: relative;
+}
+.comment__name {
+  font-weight: 600;
+  margin-left: 20px;
+}
+.comment__date {
+  color: #e1e1e1;
+  position: absolute;
+  right: 10px;
+}
+.comment__text {
+  padding: 18px;
 }/*# sourceMappingURL=bio.css.map */

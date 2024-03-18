@@ -47,6 +47,10 @@ ol {
   list-style: none;
 }
 
+p {
+  padding: 16px 0 0 20px;
+}
+
 .site-header {
   display: flex;
   flex-direction: column;
@@ -185,15 +189,52 @@ ol {
   }
 }
 
+.show {
+  display: flex;
+  flex-direction: column;
+}
 .show__title {
   padding: 16px 0 0 20px;
 }
 .show__list {
-  display: flex;
+  border-bottom: 1px solid #e1e1e1;
 }
-.show__subtitle {
-  display: flex;
-  justify-content: space-around;
+.show__dateheader {
+  font-size: 12px;
+  font-weight: 700;
+  color: #afafaf;
+}
+.show__date {
+  padding-top: 0;
+  font-weight: 700;
+}
+.show__venueheader {
+  font-size: 12px;
+  font-weight: 700;
+  color: #afafaf;
+}
+.show__venue {
+  padding-top: 0;
+}
+.show__locationheader {
+  font-size: 12px;
+  font-weight: 700;
+  color: #afafaf;
+}
+.show__location {
+  padding-top: 0;
+}
+
+button[type=submit] {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 16px;
+  color: #ffffff;
+  background-color: #323232;
+  border-radius: 5px;
+  margin-left: 18px;
+  width: 90%;
+  margin-bottom: 16px;
 }
 
 .footer-container {

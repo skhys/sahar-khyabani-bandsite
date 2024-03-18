@@ -404,6 +404,28 @@ button[type="submit"] {
   margin-left: 28px;
   width: 85%;
   margin-bottom: 16px;
+  @include tablet {
+    width: 40%;
+    font-size: 16px;
+  }
+}
+
+.comment {
+  border-bottom: 1px solid $secondary-mercury;
+  position: relative;
+  &__name {
+    font-weight: 600;
+    margin-left: 20px;
+  }
+  &__date {
+    color: $secondary-mercury;
+    position: absolute;
+    right: 10px;
+    // top: 10px;
+  }
+  &__text {
+    padding: 18px;
+  }
 }
 
 // input [type="submit"] {

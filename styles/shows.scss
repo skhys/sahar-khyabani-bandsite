@@ -40,6 +40,10 @@ ol {
   list-style: none;
 }
 
+p {
+  padding: 16px 0 0 20px;
+}
+
 .site-header {
   display: flex;
   flex-direction: column;
@@ -168,16 +172,75 @@ ol {
 }
 
 .show {
+  display: flex;
+  flex-direction: column;
+  // @include tablet {
+  //   // display: flex;
+  //   // flex-direction: row;
+  // }
+
+  // border-bottom the entire container for the line break.
+  // border-bottom: 1px solid $secondary-mercury;
+
   &__title {
     padding: 16px 0 0 20px;
   }
   &__list {
-    display: flex;
+    border-bottom: 1px solid $secondary-mercury;
+    // display: flex;
   }
-  &__subtitle {
-    display: flex;
-    justify-content: space-around;
+
+  // &__subtitle {
+  //   // font-size: 12px;
+  //   // font-weight: 700;
+  //   // display: flex;
+  //   // justify-content: space-around;
+  // }
+  // &__wrapper {
+  //   border-bottom: 1px solid $secondary-mercury;
+  //   @include tablet {
+  //     display: flex;
+  //     flex-direction: row;
+  //   }
+  // }
+  &__dateheader {
+    font-size: 12px;
+    font-weight: 700;
+    color: $primary-silver;
   }
+  &__date {
+    padding-top: 0;
+    font-weight: 700;
+  }
+  &__venueheader {
+    font-size: 12px;
+    font-weight: 700;
+    color: $primary-silver;
+  }
+  &__venue {
+    padding-top: 0;
+  }
+  &__locationheader {
+    font-size: 12px;
+    font-weight: 700;
+    color: $primary-silver;
+  }
+  &__location {
+    padding-top: 0;
+  }
+}
+
+button[type="submit"] {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 16px;
+  color: $primary-white;
+  background-color: $primary-black;
+  border-radius: 5px;
+  margin-left: 18px;
+  width: 90%;
+  margin-bottom: 16px;
+  // border-bottom: 5px;
 }
 
 .footer-container {
