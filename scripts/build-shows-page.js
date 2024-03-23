@@ -58,43 +58,43 @@ const showsContainer = document.querySelector(".show__list");
 console.log(showsContainer);
 
 function displayShow(show) {
-  const showElement = document.createElement("main");
+  const showElement = document.createElement("div");
   showElement.classList.add("show");
 
   const dateElement = document.createElement("p");
   dateElement.classList.add("show__dateheader");
   dateElement.textContent = "DATE";
-  showsContainer.appendChild(dateElement);
+  showElement.appendChild(dateElement);
 
   const dateTextElement = document.createElement("p");
   dateTextElement.classList.add("show__date");
   dateTextElement.textContent = show.date;
-  showsContainer.appendChild(dateTextElement);
+  showElement.appendChild(dateTextElement);
 
   const venueElement = document.createElement("p");
   venueElement.classList.add("show__venueheader");
   venueElement.textContent = "VENUE";
-  showsContainer.appendChild(venueElement);
+  showElement.appendChild(venueElement);
 
   const venueTextElement = document.createElement("p");
   venueTextElement.classList.add("show__venue");
   venueTextElement.textContent = show.venue;
-  showsContainer.appendChild(venueTextElement);
+  showElement.appendChild(venueTextElement);
 
   const locationElement = document.createElement("p");
   locationElement.classList.add("show__locationheader");
   locationElement.textContent = "LOCATION";
-  showsContainer.appendChild(locationElement);
+  showElement.appendChild(locationElement);
 
   const locationTextElement = document.createElement("p");
   locationTextElement.classList.add("show__location");
   locationTextElement.textContent = show.location;
-  showsContainer.appendChild(locationTextElement);
+  showElement.appendChild(locationTextElement);
 
   const buttonElement = document.createElement("button");
   buttonElement.setAttribute("type", "submit");
   buttonElement.textContent = show.button;
-  showsContainer.appendChild(buttonElement);
+  showElement.appendChild(buttonElement);
 
   showsContainer.appendChild(showElement);
 }

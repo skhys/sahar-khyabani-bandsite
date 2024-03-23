@@ -177,7 +177,7 @@ p {
   border-bottom: 1px solid $secondary-mercury;
   @include tablet {
     display: flex;
-    // flex-direction: row;
+    flex-direction: row;
   }
 
   &__title {
@@ -188,6 +188,14 @@ p {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
+      justify-content: space-evenly;
+      padding-bottom: 40px;
+    }
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: stretch;
     }
   }
 
@@ -208,6 +216,9 @@ p {
     font-size: 12px;
     font-weight: 700;
     color: $primary-silver;
+    @include tablet {
+      display: none;
+    }
   }
   &__date {
     padding-top: 0;
@@ -217,6 +228,9 @@ p {
     font-size: 12px;
     font-weight: 700;
     color: $primary-silver;
+    @include tablet {
+      display: none;
+    }
   }
   &__venue {
     padding-top: 0;
@@ -225,6 +239,9 @@ p {
     font-size: 12px;
     font-weight: 700;
     color: $primary-silver;
+    @include tablet {
+      display: none;
+    }
   }
   &__location {
     padding-top: 0;
@@ -243,6 +260,7 @@ button[type="submit"] {
   margin-bottom: 16px;
   // border-bottom: 5px;
   @include tablet {
+    width: 30%;
   }
 }
 

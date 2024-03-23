@@ -98,3 +98,71 @@ commentForm.addEventListener("submit", function (event) {
   listItem.innerText = userName + ": " + newComment;
   dynamicContent.appendChild(listItem);
 });
+
+// import { BandSiteApi } from "./band-site-api.js";
+import { BandSiteApi } from "./band-site-api";
+
+document.addEventListener("DOMContentLoaded", async function () {
+  const apiKey = "572fcc84-b65f-40d3-a206-084391a44203";
+  const bandSiteApi = new BandSiteApi(apiKey);
+
+  const appendComment = (commentsList, comment) => {
+    const listItem = document.createElement("li");
+    listItem.classList.add("comment");
+
+    const avatarDiv = document.createElement("div");
+    avatarDiv.classList.add("avatar");
+    const avatarImg = document.createElement("img");
+    // avatarImg.src = comment.avatar || '../assets.jpg';
+    avatarImg.alt = "Avatar";
+    avatarDiv.appendChild(avatarImg);
+    listItem.appendChild(avatarDiv);
+
+    const commentContentDiv = document.createElement("div");
+    commentContentDiv.classList.add("comment-content");
+    const commentText = document.createElement("p");
+    commentText.textContent = comment.text;
+    commentContentDiv.appendChild(commentText);
+    const dateSpan = document.createElement("span");
+    dateSpan.classList.add("date");
+    dateSpan.textContent = new Date(comment.date).toLocaleString();
+    commentContentDiv.appendChild(dateSpan);
+    listItem.appendChild(commentContentDiv);
+
+    commentsList.appendChild(listItem);
+  };
+
+  const displayComments = async () => {
+    const commentsList = document.getElementById("comments-list");
+    commentsList.innerHTML = "";
+
+    const comments = await bandSiteApi.getComments();
+
+    comments.forEach((comment) => {
+      appendComment(commentsList, comment);
+    });
+  };
+
+  displayComments();
+
+  const commentForm = document.getElementById("comment-form");
+  commentForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const commentInput = document.getElementById("comment-input");
+    const commentText = commentInput.value.trim();
+
+    if (commentText) {
+      const newComment = {
+        text: commentText,
+        // add more properties like 'avatar'
+      };
+
+      await bandSiteApi.postComment(newComment);
+
+      commentInput.value = "";
+
+      displayComments();
+    }
+  });
+});

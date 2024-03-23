@@ -197,6 +197,7 @@ p {
 @media (min-width: 768px) {
   .show {
     display: flex;
+    flex-direction: row;
   }
 }
 .show__title {
@@ -207,12 +208,27 @@ p {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: space-evenly;
+    padding-bottom: 40px;
+  }
+}
+@media (min-width: 1280px) {
+  .show__list {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: stretch;
   }
 }
 .show__dateheader {
   font-size: 12px;
   font-weight: 700;
   color: #afafaf;
+}
+@media (min-width: 768px) {
+  .show__dateheader {
+    display: none;
+  }
 }
 .show__date {
   padding-top: 0;
@@ -223,6 +239,11 @@ p {
   font-weight: 700;
   color: #afafaf;
 }
+@media (min-width: 768px) {
+  .show__venueheader {
+    display: none;
+  }
+}
 .show__venue {
   padding-top: 0;
 }
@@ -230,6 +251,11 @@ p {
   font-size: 12px;
   font-weight: 700;
   color: #afafaf;
+}
+@media (min-width: 768px) {
+  .show__locationheader {
+    display: none;
+  }
 }
 .show__location {
   padding-top: 0;
@@ -246,6 +272,12 @@ button[type=submit] {
   width: 90%;
   margin-bottom: 16px;
 }
+@media (min-width: 768px) {
+  button[type=submit] {
+    width: 30%;
+  }
+}
+
 .footer-container {
   background-color: #323232;
   color: #ffffff;
