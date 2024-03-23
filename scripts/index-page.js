@@ -1,23 +1,24 @@
-// testing console below
-console.log("hello");
+import { saharBandSite } from "./band-site-api.js";
 
-const comments = [
-  {
-    name: "Victor Pinto",
-    date: "11/02/2023",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Christina Cabrera",
-    date: "10/28/2023",
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Isaac Tadesse",
-    date: "10/20/2023",
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+const comments = await saharBandSite.getComments();
+
+// const comments = [
+//   {
+//     name: "Victor Pinto",
+//     date: "11/02/2023",
+//     text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//   },
+//   {
+//     name: "Christina Cabrera",
+//     date: "10/28/2023",
+//     text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//   },
+//   {
+//     name: "Isaac Tadesse",
+//     date: "10/20/2023",
+//     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//   },
+// ];
 
 const commentsContainer = document.querySelector(".comment");
 console.log(commentsContainer);
@@ -33,7 +34,7 @@ function displayComment(comment) {
 
   const dateElement = document.createElement("p");
   dateElement.classList.add("comment__date");
-  dateElement.textContent = comment.date;
+  dateElement.textContent = comment.timestamp;
   commentsContainer.appendChild(dateElement);
 
   const textElement = document.createElement("p");
@@ -100,7 +101,7 @@ commentForm.addEventListener("submit", function (event) {
 });
 
 // import { BandSiteApi } from "./band-site-api.js";
-import { BandSiteApi } from "./band-site-api";
+import { saharBandSite } from "./band-site-api.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
   const apiKey = "572fcc84-b65f-40d3-a206-084391a44203";
@@ -110,13 +111,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     const listItem = document.createElement("li");
     listItem.classList.add("comment");
 
-    const avatarDiv = document.createElement("div");
-    avatarDiv.classList.add("avatar");
-    const avatarImg = document.createElement("img");
+    // const avatarDiv = document.createElement("div");
+    // avatarDiv.classList.add("avatar");
+    // const avatarImg = document.createElement("img");
     // avatarImg.src = comment.avatar || '../assets.jpg';
-    avatarImg.alt = "Avatar";
-    avatarDiv.appendChild(avatarImg);
-    listItem.appendChild(avatarDiv);
+    // avatarImg.alt = "Avatar";
+    // avatarDiv.appendChild(avatarImg);
+    // listItem.appendChild(avatarDiv);
 
     const commentContentDiv = document.createElement("div");
     commentContentDiv.classList.add("comment-content");
@@ -155,7 +156,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (commentText) {
       const newComment = {
         text: commentText,
-        // add more properties like 'avatar'
+        // avatar: ".img"
       };
 
       await bandSiteApi.postComment(newComment);

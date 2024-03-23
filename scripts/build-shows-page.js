@@ -1,41 +1,45 @@
-const shows = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS",
-  },
-  {
-    date: "Tue Sept 17 2024",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS",
-  },
-  {
-    date: "Sat Oct 12 2024",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS",
-  },
-  {
-    date: "Sat Nov 16 2024",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS",
-  },
-  {
-    date: "Wed Dec 18 2024",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS",
-  },
-];
+import { saharBandSite } from "./band-site-api.js";
+
+const shows = await saharBandSite.getShows();
+
+// const shows = [
+//   {
+//     date: "Mon Sept 09 2024",
+//     venue: "Ronald Lane",
+//     location: "San Francisco, CA",
+//     button: "BUY TICKETS",
+//   },
+//   {
+//     date: "Tue Sept 17 2024",
+//     venue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//     button: "BUY TICKETS",
+//   },
+//   {
+//     date: "Sat Oct 12 2024",
+//     venue: "View Lounge",
+//     location: "San Francisco, CA",
+//     button: "BUY TICKETS",
+//   },
+//   {
+//     date: "Sat Nov 16 2024",
+//     venue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//     button: "BUY TICKETS",
+//   },
+//   {
+//     date: "Fri Nov 29 2024",
+//     venue: "Moscow Center",
+//     location: "San Francisco, CA",
+//     button: "BUY TICKETS",
+//   },
+//   {
+//     date: "Wed Dec 18 2024",
+//     venue: "Press Club",
+//     location: "San Francisco, CA",
+//     button: "BUY TICKETS",
+//   },
+// ];
 
 /* <main class="show">
 <h2 class="show__title">Shows</h2>
@@ -68,7 +72,8 @@ function displayShow(show) {
 
   const dateTextElement = document.createElement("p");
   dateTextElement.classList.add("show__date");
-  dateTextElement.textContent = show.date;
+  const date = new Date(show.date);
+  dateTextElement.textContent = date.toDateString();
   showElement.appendChild(dateTextElement);
 
   const venueElement = document.createElement("p");
@@ -78,7 +83,7 @@ function displayShow(show) {
 
   const venueTextElement = document.createElement("p");
   venueTextElement.classList.add("show__venue");
-  venueTextElement.textContent = show.venue;
+  venueTextElement.textContent = show.place;
   showElement.appendChild(venueTextElement);
 
   const locationElement = document.createElement("p");
@@ -93,7 +98,7 @@ function displayShow(show) {
 
   const buttonElement = document.createElement("button");
   buttonElement.setAttribute("type", "submit");
-  buttonElement.textContent = show.button;
+  buttonElement.textContent = "BUY TICKETS";
   showElement.appendChild(buttonElement);
 
   showsContainer.appendChild(showElement);

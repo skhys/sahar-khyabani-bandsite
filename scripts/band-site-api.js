@@ -1,8 +1,9 @@
-{
-  ("api_key");
-  ("572fcc84-b65f-40d3-a206-084391a44203");
-}
-const axios = require("axios");
+// {
+//   ("api_key");
+//   ("572fcc84-b65f-40d3-a206-084391a44203");
+// }
+
+const apiKey = "?api_key=572fcc84-b65f-40d3-a206-084391a44203";
 class BandSiteApi {
   constructor(apiKey) {
     this.apiKey = apiKey;
@@ -11,11 +12,11 @@ class BandSiteApi {
 
   async postComment(comment) {
     try {
-      const response = await axios.post(`${this.baseUrl}/comments`, comment, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${this.apiKey}`,
-        },
+      const response = await axios.post(`${this.baseUrl}comments`, comment, {
+        // headers: {
+        //   "Content-Type": "application/json",
+        //   Authorization: `Bearer ${this.apiKey}`,
+        // },
       });
       return response.data;
     } catch (error) {
@@ -25,14 +26,10 @@ class BandSiteApi {
 
   async getComments() {
     try {
-      const response = await axios.get(`${this.baseUrl}/comments`, {
-        headers: {
-          Authorization: `Bearer ${this.apiKey}`,
-        },
-      });
+      const response = await axios.get(`${this.baseUrl}comments${apiKey}`);
       let comments = response.data;
 
-      comments.sort((a, b) => new Date(b.date) - new Date(a.date));
+      comments.sort((a, b) => b.timestamp - a.timestamp);
       return comments;
     } catch (error) {
       console.error("Error fetching comments:", error);
@@ -42,11 +39,7 @@ class BandSiteApi {
 
   async getShows() {
     try {
-      const response = await axios.get(`${this.baseUrl}/shows`, {
-        headers: {
-          Authorization: `Bearer ${this.apiKey}`,
-        },
-      });
+      const response = await axios.get(`${this.baseUrl}showdates${apiKey}`);
       const shows = response.data;
       return shows;
     } catch (error) {
@@ -56,8 +49,8 @@ class BandSiteApi {
   }
 }
 
-module.exports = BandSiteApi;
 console.log(BandSiteApi);
+export const saharBandSite = new BandSiteApi(apiKey);
 
 //   const bandsite_API_URL = 'https://unit-2-project-api-25c1595833b2.herokuapp.com/';
 // export class bandsiteAPI {
