@@ -21,11 +21,21 @@ const comments = await saharBandSite.getComments();
 // ];
 
 const commentsContainer = document.querySelector(".comment");
-console.log(commentsContainer);
 
 function displayComment(comment) {
   const groupElement = document.createElement("div");
   groupElement.classList.add("comment__group");
+
+  const avatarElement = document.createElement("div");
+  avatarElement.classList.add("avatar");
+  const avatarImg = document.createElement("img");
+  if (comment.avatar) {
+    avatarImg.src = comment.avatar;
+  } else {
+    avatarImg.classList.add("default-avatar");
+  }
+  avatarElement.appendChild(avatarImg);
+  commentsContainer.appendChild(avatarElement);
 
   const nameElement = document.createElement("p");
   nameElement.classList.add("comment__name");
@@ -34,23 +44,12 @@ function displayComment(comment) {
 
   const dateElement = document.createElement("p");
   dateElement.classList.add("comment__date");
-  // const date = new Date(comment.timestamp);
-  // dateElement.textContent = comment.timestamp;
-  // dateSpan.textContent = new Date(comment.date).toLocaleString();
   dateElement.textContent = new Date(comment.timestamp).toLocaleDateString();
   commentsContainer.appendChild(dateElement);
 
-  const avatarElement = document.createElement("div");
-  avatarElement.classList.add("avatar");
-  const avatarImg = document.createElement("img");
-  avatarImg.src = comment.avatar || "Mohan-muruge.jpg";
-  avatarImg.alt = "Avatar";
-  avatarElement.appendChild(avatarImg);
-  commentsContainer.appendChild(avatarElement);
-
   const textElement = document.createElement("p");
   textElement.classList.add("comment__text");
-  textElement.textContent = comment.text;
+  textElement.textContent = comment.comment;
   commentsContainer.appendChild(textElement);
 
   commentsContainer.appendChild(groupElement);
@@ -76,18 +75,18 @@ commentForm.addEventListener("submit", function (event) {
   dynamicContent.appendChild(listItem);
 });
 
-const displayComments = async () => {
-  const commentForm = document.getElementById("commentForm");
-  commentForm.innerHTML = "";
+// const displayComments = async () => {
+//   const commentForm = document.getElementById("commentForm");
+//   commentForm.innerHTML = "";
 
-  const comments = await saharBandSite.getComments();
+//   const comments = await saharBandSite.getComments();
 
-  comments.forEach((comment) => {
-    appendComment(commentForm, comment);
-  });
-};
+//   comments.forEach((comment) => {
+//     appendComment(commentForm, comment);
+//   });
+// };
 
-displayComments();
+// displayComments();
 
 // const commentForm = document.getElementById("commentForm");
 commentForm.addEventListener("submit", async (event) => {
@@ -99,7 +98,7 @@ commentForm.addEventListener("submit", async (event) => {
   if (commentText) {
     const newComment = {
       text: commentText,
-      // avatar: ".img"
+      avatar: ".img",
     };
 
     await bandSiteApi.postComment(newComment);

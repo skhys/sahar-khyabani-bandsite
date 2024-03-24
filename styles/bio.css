@@ -500,9 +500,20 @@ button[type=submit] {
 }
 .comment__date {
   color: #e1e1e1;
-  position: absolute;
-  right: 10px;
 }
 .comment__text {
   padding: 18px;
+}
+
+.default-avatar {
+  width: 36px;
+  height: 36px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+@media (min-width: 768px) {
+  .default-avatar {
+    width: 48px;
+    height: 48px;
+  }
 }/*# sourceMappingURL=bio.css.map */
