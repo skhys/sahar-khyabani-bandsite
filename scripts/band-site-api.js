@@ -1,8 +1,3 @@
-// {
-//   ("api_key");
-//   ("572fcc84-b65f-40d3-a206-084391a44203");
-// }
-
 const apiKey = "?api_key=572fcc84-b65f-40d3-a206-084391a44203";
 class BandSiteApi {
   constructor(apiKey) {
@@ -12,12 +7,7 @@ class BandSiteApi {
 
   async postComment(comment) {
     try {
-      const response = await axios.post(`${this.baseUrl}comments`, comment, {
-        // headers: {
-        //   "Content-Type": "application/json",
-        //   Authorization: `Bearer ${this.apiKey}`,
-        // },
-      });
+      const response = await axios.post(`${this.baseUrl}comments`, comment, {});
       return response.data;
     } catch (error) {
       console.error("Error posting comment:", error);
@@ -51,22 +41,3 @@ class BandSiteApi {
 
 console.log(BandSiteApi);
 export const saharBandSite = new BandSiteApi(apiKey);
-
-//   const bandsite_API_URL = 'https://unit-2-project-api-25c1595833b2.herokuapp.com/';
-// export class bandsiteAPI {
-//     constructor(apiKey) {
-//         this.apiKey =apiKey;
-//         this.bandSiteURL = bandsite_API_URL;
-//     }
-//     async getBandsiteAPI()
-// }
-
-// const getComments = 'https://unit-2-project-api-25c1595833b2.herokuapp.com/comments/?api_key=572fcc84-b65f-40d3-a206-084391a44203'
-
-// const getShows = 'https://unit-2-project-api-25c1595833b2.herokuapp.com/showdates/?api_key=572fcc84-b65f-40d3-a206-084391a44203'
-
-// getComment = async () => {
-//     try {
-//         const commentRequest = await axios.get
-//     }
-// }

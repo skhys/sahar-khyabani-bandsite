@@ -34,8 +34,19 @@ function displayComment(comment) {
 
   const dateElement = document.createElement("p");
   dateElement.classList.add("comment__date");
-  dateElement.textContent = comment.timestamp;
+  // const date = new Date(comment.timestamp);
+  // dateElement.textContent = comment.timestamp;
+  // dateSpan.textContent = new Date(comment.date).toLocaleString();
+  dateElement.textContent = new Date(comment.timestamp).toLocaleDateString();
   commentsContainer.appendChild(dateElement);
+
+  const avatarElement = document.createElement("div");
+  avatarElement.classList.add("avatar");
+  const avatarImg = document.createElement("img");
+  avatarImg.src = comment.avatar || "Mohan-muruge.jpg";
+  avatarImg.alt = "Avatar";
+  avatarElement.appendChild(avatarImg);
+  commentsContainer.appendChild(avatarElement);
 
   const textElement = document.createElement("p");
   textElement.classList.add("comment__text");
@@ -46,47 +57,12 @@ function displayComment(comment) {
 }
 
 function displayComments() {
-  // commentsContainer.innerHTML = "";
-
   comments.forEach((comment) => {
     displayComment(comment);
   });
-  // for (let i = 0; i < comments.length; i++) {
-  //   displayComments(comments[i]);
-  // }
 }
 
 displayComments();
-// function displayName() {
-//   // commentsContainer.innerHTML = "";
-
-//   userName.forEach((name) => {
-//     displayName(name);
-//   });
-//   // for (let i = 0; i < comments.length; i++) {
-//   //   displayComments(comments[i]);
-//   // }
-// }
-
-// const commentElement = (item) => {
-// const commentElement = document.createElement('div');
-// commentElement.classList.add('comment__title');
-// const commentName
-// }
-
-// test comment box code
-// const commentForm = document.getElementById("commentForm");
-// const dynamicContent = document.getElementById("dynamicContent");
-
-// commentForm.addEventListener("submit", function (event) {
-//   event.preventDefault();
-//   const userName = event.target.nameInput.value;
-//   const newComment = event.target.commentInput.value;
-//   const listElement = document.createElement("li");
-//   listElement.innerText = userName;
-//   listElement.innerText = newComment;
-//   dynamicContent.appendChild(listElement);
-// });
 
 const commentForm = document.getElementById("commentForm");
 const dynamicContent = document.getElementById("dynamicContent");
@@ -100,70 +76,102 @@ commentForm.addEventListener("submit", function (event) {
   dynamicContent.appendChild(listItem);
 });
 
-// import { BandSiteApi } from "./band-site-api.js";
-import { saharBandSite } from "./band-site-api.js";
+const displayComments = async () => {
+  const commentForm = document.getElementById("commentForm");
+  commentForm.innerHTML = "";
 
-document.addEventListener("DOMContentLoaded", async function () {
-  const apiKey = "572fcc84-b65f-40d3-a206-084391a44203";
-  const bandSiteApi = new BandSiteApi(apiKey);
+  const comments = await saharBandSite.getComments();
 
-  const appendComment = (commentsList, comment) => {
-    const listItem = document.createElement("li");
-    listItem.classList.add("comment");
-
-    // const avatarDiv = document.createElement("div");
-    // avatarDiv.classList.add("avatar");
-    // const avatarImg = document.createElement("img");
-    // avatarImg.src = comment.avatar || '../assets.jpg';
-    // avatarImg.alt = "Avatar";
-    // avatarDiv.appendChild(avatarImg);
-    // listItem.appendChild(avatarDiv);
-
-    const commentContentDiv = document.createElement("div");
-    commentContentDiv.classList.add("comment-content");
-    const commentText = document.createElement("p");
-    commentText.textContent = comment.text;
-    commentContentDiv.appendChild(commentText);
-    const dateSpan = document.createElement("span");
-    dateSpan.classList.add("date");
-    dateSpan.textContent = new Date(comment.date).toLocaleString();
-    commentContentDiv.appendChild(dateSpan);
-    listItem.appendChild(commentContentDiv);
-
-    commentsList.appendChild(listItem);
-  };
-
-  const displayComments = async () => {
-    const commentsList = document.getElementById("comments-list");
-    commentsList.innerHTML = "";
-
-    const comments = await bandSiteApi.getComments();
-
-    comments.forEach((comment) => {
-      appendComment(commentsList, comment);
-    });
-  };
-
-  displayComments();
-
-  const commentForm = document.getElementById("comment-form");
-  commentForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const commentInput = document.getElementById("comment-input");
-    const commentText = commentInput.value.trim();
-
-    if (commentText) {
-      const newComment = {
-        text: commentText,
-        // avatar: ".img"
-      };
-
-      await bandSiteApi.postComment(newComment);
-
-      commentInput.value = "";
-
-      displayComments();
-    }
+  comments.forEach((comment) => {
+    appendComment(commentForm, comment);
   });
+};
+
+displayComments();
+
+// const commentForm = document.getElementById("commentForm");
+commentForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const commentInput = document.getElementById("commentInput");
+  const commentText = commentInput.value.trim();
+
+  if (commentText) {
+    const newComment = {
+      text: commentText,
+      // avatar: ".img"
+    };
+
+    await bandSiteApi.postComment(newComment);
+
+    commentInput.value = "";
+
+    displayComments();
+  }
 });
+// });
+
+// document.addEventListener("DOMContentLoaded", async function () {
+//   const apiKey = "572fcc84-b65f-40d3-a206-084391a44203";
+//   const bandSiteApi = new BandSiteApi(apiKey);
+
+//   const appendComment = (commentsList, comment) => {
+//     const listItem = document.createElement("li");
+//     listItem.classList.add("comment");
+
+//     // const avatarDiv = document.createElement("div");
+//     // avatarDiv.classList.add("avatar");
+//     // const avatarImg = document.createElement("img");
+//     // avatarImg.src = comment.avatar || '../assets.jpg';
+//     // avatarImg.alt = "Avatar";
+//     // avatarDiv.appendChild(avatarImg);
+//     // listItem.appendChild(avatarDiv);
+
+//     const commentContentDiv = document.createElement("div");
+//     commentContentDiv.classList.add("comment-content");
+//     const commentText = document.createElement("p");
+//     commentText.textContent = comment.text;
+//     commentContentDiv.appendChild(commentText);
+//     const dateSpan = document.createElement("span");
+//     dateSpan.classList.add("date");
+//     dateSpan.textContent = new Date(comment.date).toLocaleString();
+//     commentContentDiv.appendChild(dateSpan);
+//     listItem.appendChild(commentContentDiv);
+
+//     commentsList.appendChild(listItem);
+//   };
+
+//   const displayComments = async () => {
+//     const commentsList = document.getElementById("comments-list");
+//     commentsList.innerHTML = "";
+
+//     const comments = await bandSiteApi.getComments();
+
+//     comments.forEach((comment) => {
+//       appendComment(commentsList, comment);
+//     });
+//   };
+
+//   displayComments();
+
+//   const commentForm = document.getElementById("comment-form");
+//   commentForm.addEventListener("submit", async (event) => {
+//     event.preventDefault();
+
+//     const commentInput = document.getElementById("comment-input");
+//     const commentText = commentInput.value.trim();
+
+//     if (commentText) {
+//       const newComment = {
+//         text: commentText,
+//         // avatar: ".img"
+//       };
+
+//       await bandSiteApi.postComment(newComment);
+
+//       commentInput.value = "";
+
+//       displayComments();
+//     }
+//   });
+// });
