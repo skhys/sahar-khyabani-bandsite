@@ -505,6 +505,10 @@ button[type=submit] {
   padding: 18px;
 }
 
+.avatar {
+  padding-left: 16px;
+}
+
 .default-avatar {
   width: 36px;
   height: 36px;
