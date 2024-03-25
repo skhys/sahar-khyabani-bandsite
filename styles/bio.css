@@ -438,10 +438,6 @@ ol {
   height: 36px;
 }
 
-.comment__group {
-  border-bottom: 1px solid #e1e1e1;
-}
-
 input[type=text] {
   padding: 10px;
   border-color: rgba(50, 50, 50, 0.1411764706);
@@ -477,8 +473,16 @@ button[type=submit] {
   background-color: #323232;
   border-radius: 5px;
   margin-left: 28px;
-  width: 85%;
+  width: 15rem;
   margin-bottom: 16px;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+@media (min-width: 768px) {
+  button[type=submit] {
+    width: 25rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -494,19 +498,37 @@ button[type=submit] {
   border-bottom: 1px solid #e1e1e1;
   position: relative;
 }
+.comment__group {
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  flex-direction: row;
+}
+@media (min-width: 768px) {
+  .comment__group {
+    justify-content: center;
+  }
+}
+.comment__detail {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 16px;
+}
+.comment__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .comment__name {
   font-weight: 600;
-  margin-left: 20px;
 }
 .comment__date {
   color: #e1e1e1;
 }
-.comment__text {
-  padding: 18px;
-}
 
 .avatar {
-  padding-left: 16px;
+  padding-top: 20px;
+  margin-left: 10px;
 }
 
 .default-avatar {

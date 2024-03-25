@@ -1,9 +1,6 @@
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
 
-// * {
-// }
-
 body {
   font-family: $body-font;
   color: $primary-black;
@@ -35,7 +32,6 @@ ol {
   list-style: none;
 }
 
-// COME BACK TO THIS
 .site-header {
   display: flex;
   flex-direction: column;
@@ -44,7 +40,6 @@ ol {
   background-color: $primary-black;
   color: $primary-white;
   width: 100%;
-  // padding: 10px;
   @include tablet {
     display: flex;
     flex-direction: row;
@@ -60,9 +55,6 @@ ol {
     }
   }
 }
-
-// .site-header__wrapper {
-//   display: flex;
 
 .primary-nav {
   display: flex;
@@ -351,19 +343,12 @@ ol {
   &__title {
     padding-left: 28px;
   }
-
-  // &__list {
-  //   // color: $secondary-mercury;
-  //   // font-weight: 700;
-  // }
-
   &__wrapper {
     margin: 10px;
     color: $primary-silver;
     font-weight: 600;
     font-size: 12px;
     padding-bottom: 10px;
-    // display: flex;
     @include tablet {
       display: flex;
       justify-content: center;
@@ -376,12 +361,6 @@ ol {
     border-radius: 50%;
     width: 36px;
     height: 36px;
-  }
-}
-
-.comment {
-  &__group {
-    border-bottom: 1px solid $secondary-mercury;
   }
 }
 
@@ -402,7 +381,6 @@ input[type="comment"] {
   border-color: #32323224;
   border-radius: 5px;
   width: 240px;
-  // height: 500px;
   background-color: $secondary-alabaster;
   color: $secondary-black;
 }
@@ -419,8 +397,14 @@ button[type="submit"] {
   background-color: $primary-black;
   border-radius: 5px;
   margin-left: 28px;
-  width: 85%;
+  width: 15rem;
   margin-bottom: 16px;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  @include tablet {
+    width: 25rem;
+  }
 }
 
 .button-item {
@@ -436,26 +420,36 @@ button[type="submit"] {
 .comment {
   border-bottom: 1px solid $secondary-mercury;
   position: relative;
+  &__group {
+    border-bottom: 1px solid $secondary-mercury;
+    display: flex;
+    flex-direction: row;
+    @include tablet {
+      justify-content: center;
+    }
+  }
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 16px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   &__name {
     font-weight: 600;
-    margin-left: 20px;
   }
   &__date {
     color: $secondary-mercury;
-    // position: absolute;
-    // right: 10px;
-    // top: 10px;
   }
-  &__text {
-    padding: 18px;
-  }
-}
-
-.comment__group {
 }
 
 .avatar {
-  padding-left: 16px;
+  padding-top: 20px;
+  margin-left: 10px;
 }
 
 .default-avatar {
@@ -468,10 +462,3 @@ button[type="submit"] {
     height: 48px;
   }
 }
-// input [type="submit"] {
-// }
-
-// DELETE THIS EVENTUALLY
-// * {
-//   outline: 1px solid red;
-// }

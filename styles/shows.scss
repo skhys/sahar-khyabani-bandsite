@@ -1,14 +1,6 @@
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
 
-// DELETE THIS EVENTUALLY
-// * {
-//   outline: 1px solid red;
-// }
-
-// * {
-// }
-
 body {
   font-family: $body-font;
   color: $primary-black;
@@ -52,7 +44,6 @@ p {
   background-color: $primary-black;
   color: $primary-white;
   width: 100%;
-  // padding: 10px;
   @include tablet {
     display: flex;
     flex-direction: row;
@@ -100,23 +91,19 @@ p {
     url("../assets/Images/hero-shows.jpg");
   background-size: cover;
   background-position: center;
-  // height: 10vh;
   min-height: 350px;
-  // max-height: 600px;
   display: flex;
   flex-direction: column;
   align-items: left;
   width: 100%;
   color: $primary-white;
   @include tablet {
-    // height: 60vh;
     min-height: 50%;
     padding-top: 30px;
   }
   @include desktop {
     height: 100vh;
     display: flex;
-    // min-height: 40%;
   }
   &__wrapper {
     @include desktop {
@@ -175,9 +162,15 @@ p {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid $secondary-mercury;
+  padding: 10px;
+  background-color: white;
+  transition: background-color 0.3s ease;
+  width: 75%;
+  justify-content: center;
   @include tablet {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
   }
 
   &__title {
@@ -198,20 +191,20 @@ p {
       align-items: stretch;
     }
   }
+  &__toptitles {
+    display: none;
 
-  // &__subtitle {
-  //   // font-size: 12px;
-  //   // font-weight: 700;
-  //   // display: flex;
-  //   // justify-content: space-around;
-  // }
-  // &__wrapper {
-  //   border-bottom: 1px solid $secondary-mercury;
-  //   @include tablet {
-  //     display: flex;
-  //     flex-direction: row;
-  //   }
-  // }
+    @include tablet {
+      font-weight: 600;
+      color: $primary-silver;
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 16px;
+    }
+  }
+  &__subtitle {
+    display: flex;
+  }
   &__dateheader {
     font-size: 12px;
     font-weight: 700;
@@ -248,19 +241,26 @@ p {
   }
 }
 
+.show:hover {
+  background-color: $secondary-alabaster;
+}
+
+.show:active {
+  background-color: $secondary-mercury;
+}
+
 button[type="submit"] {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 400;
   padding: 16px;
   color: $primary-white;
   background-color: $primary-black;
   border-radius: 5px;
   margin-left: 18px;
-  width: 90%;
+  width: 15rem;
   margin-bottom: 16px;
-  // border-bottom: 5px;
   @include tablet {
-    width: 30%;
+    width: 10rem;
   }
 }
 
@@ -354,8 +354,3 @@ button[type="submit"] {
     }
   }
 }
-
-// // DELETE THIS EVENTUALLY
-// * {
-//   outline: 1px solid red;
-// }
